@@ -10,9 +10,9 @@ import IdleTimerContainer from "../components/IdleTimerContainer";
 import { useHistory } from "react-router-dom";
 import Footer from "../components/Footer";
 
+
 const Home = (props) => {
   const { style } = props;
-
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [newsToShow, setNewsToShow] = useState(10);
@@ -20,7 +20,10 @@ const Home = (props) => {
   const logged = JSON.parse(localStorage.getItem("logged")) || false;
   const history = useHistory();
 
+  
+
   useEffect(() => {
+    
     if (logged) {
       // Mediante llamada axios obtenemos data de la Api
       axios

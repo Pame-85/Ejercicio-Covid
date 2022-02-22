@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 const Login = (props) => {
   const { style } = props;
 
-  const [users] = useState([{ user: "admin", pass: "123123" }]);
+  const [users] = useState([{ user: "admin", pass: "123123" }]);//Agrega un usestate sin ninguna constante desestructurada sin set...
   const [rememberUserNews] = useState(
     JSON.parse(localStorage.getItem("rememberUserNews"))
   );
@@ -36,7 +36,7 @@ const Login = (props) => {
 
   return (
     <div style={style} className={"login-container"}>
-      <h1 style={{ marginBottom: 40 }}>NOTICIAS COVID-19</h1>
+      <h1 style={{ marginBottom:"40"}}>NOTICIAS COVID-19</h1>
       <LoginForm
         submit={Login}
         initialValues={{

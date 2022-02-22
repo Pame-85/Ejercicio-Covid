@@ -1,6 +1,6 @@
 /*******Se arregla el tabulado y se completa con ";" y Uppercase */
 
-import React, { useState } from "react";
+import React, { } from "react";//se saca el useState 
 import PropTypes from "prop-types";
 import { Button, Input, Tooltip } from "antd";
 import { LoginOutlined } from "@ant-design/icons";
@@ -15,7 +15,7 @@ const Header = (props) => {
       ? props.searcher
       : true;
 
-  const [filterModalVisible, setFilterModalVisible] = useState(false);
+  //const [filterModalVisible, setFilterModalVisible] = useState(false);// se saca el filterModalVisible y setfilterModalVisible
 
   let history = useHistory();
 
@@ -50,30 +50,35 @@ const Header = (props) => {
         )}
 
         {props.title && <span className={"header-title"}>{props.title}</span>}
+        
 
-        <Button
-          type="default"
-          onClick={logout}
-          ghost
-          style={{ fontWeight: "bold" }}
-          loading={false}
-          shape="round"
-          icon={<LoginOutlined size={"40"} />}
-        >
-          <span className={"sesion-button-txt"}>Cerrar sesión</span>
-        </Button>
+        <Tooltip placement="bottom" title={"Cierra sesión automáticamente"}>
+          <Button   //***************Se agrega Tooltip a los Button************************//
+            type="default"
+            onClick={logout}
+            ghost
+            style={{ fontWeight: "bold" }}
+            loading={false}
+            shape="round"
+            icon={<LoginOutlined size={"40"} />}
+          >
+            <span className={"sesion-button-txt"}>Cerrar sesión</span>
+          </Button>
+        </Tooltip>
 
-        <Button
-          type="default"
-          onClick={logout}
-          ghost
-          style={{ fontWeight: "bold" }}
-          loading={false}
-          shape="round"
-          icon={<ControlOutlined size={"40"} />}
-        >
-          <span className={"sesion-button-txt"}>Filtros</span>
-        </Button>
+        <Tooltip placement="bottom" title={"Filtra por categorías"}>
+          <Button
+            type="default"
+            onClick={logout}
+            ghost
+            style={{ fontWeight: "bold" }}
+            loading={false}
+            shape="round"
+            icon={<ControlOutlined size={"40"} />}
+          >
+            <span className={"sesion-button-txt"}>Filtros</span>
+          </Button>
+        </Tooltip>
       </div>
     </div>
   );
