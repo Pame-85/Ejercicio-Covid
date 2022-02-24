@@ -36,7 +36,7 @@ const Signup = (props) => {
 
   return (
     <div style={style} className={"signup-container"}>
-      <h1 style={{ marginBottom: 40, justifyContent: "center" }}>
+      <h1 style={{ marginBottom: "40", justifyContent: "center" }}>
         NOTICIAS COVID-19
       </h1>
       <SignupForm
