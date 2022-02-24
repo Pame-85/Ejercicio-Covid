@@ -27,8 +27,8 @@ const styles = {
       "center", /*Se agrego este style para centrar el texto del footer*/
     alignItems: "center",
     width: "100%",
-    height: 50,
-    padding: 30,
+    height:50,
+    padding:30,
     backgroundColor: "#535C68",
   },
 };
